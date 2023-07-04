@@ -1,10 +1,10 @@
-import { View, Text } from "react-native";
+import { View, Text, Button } from "react-native";
 import axios from "axios";
-import { useState } from 'react';
+import { useState,useEffect } from 'react';
 
 
 
-export default function Secret() {
+export default function Secret({navigation}) {
     const [message, setMessage]= useState("Loading...");
 
 
@@ -20,6 +20,11 @@ export default function Secret() {
     <Text>
         {message}
     </Text>
+
+    <Button title="Home" onPress={() =>
+        navigation.navigate('Home')}>
+        
+    </Button>
         
     
     </>);

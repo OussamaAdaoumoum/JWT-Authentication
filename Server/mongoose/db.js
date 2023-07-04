@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 const mongo_uri =
-  "mongodb+srv://oussama:Oussama2001@cluster0.aqunadl.mongodb.net/";
+  "mongodb+srv://oussama:Oussama2001@cluster0.aqunadl.mongodb.net/mydatabase?retryWrites=true&w=majority";
 
 mongoose
   .connect(mongo_uri, {
@@ -14,13 +14,4 @@ mongoose
     console.error("Error connecting to MongoDB:", error);
   });
 
-const UserSchema = new mongoose.Schema({
-  email: { type: String, required: true, unique: true },
-  password: { type: String, required: true },
-});
-
-module.exports = mongoose.model("User", UserSchema);
-
-module.exports = {
-  mongoose: mongoose,
-};
+module.exports = mongoose;

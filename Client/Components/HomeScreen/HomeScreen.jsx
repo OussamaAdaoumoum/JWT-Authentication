@@ -1,10 +1,10 @@
-import { View, Text } from "react-native";
+import { View, Text, Button } from "react-native";
 import axios from "axios";
 import { useEffect, useState } from 'react';
+import Secret from "../Secret/Secret";
 
 
-
-export default function HomeScreen(){
+export default function HomeScreen({navigation}){
     const [message, setMessage]= useState("Loading...");
 
 
@@ -20,6 +20,17 @@ export default function HomeScreen(){
     <Text>
         {message}
     </Text>
+    
+    <Button title="Secret" onPress={() =>
+        navigation.navigate('Secret')}>
+        
+    </Button>
+    <Button title="Login" onPress={() =>
+        navigation.navigate('Login')}>
+        
+    </Button>
+    
+
         
     
     </>);
